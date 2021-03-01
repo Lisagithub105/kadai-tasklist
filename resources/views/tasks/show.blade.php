@@ -3,7 +3,7 @@
 @section('content')
 
     <h1>タスク詳細ページ</h1>
-    <table class="table table-border">
+    <table class="table table table-bordered">
         <tr>
             <th>id</th>
             <td>{{ $task->id }}</td>

@@ -116,6 +116,7 @@ class TasksController extends Controller
         // idの値でタスク名を検索して取得
         $task = Task::findOrFail($id);
         // タスク名を更新
+        $task->status = $request->status;
         $task->content = $request->content;
         $task->save();
         
