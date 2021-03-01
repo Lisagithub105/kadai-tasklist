@@ -49,6 +49,10 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        // バリデーション
+        $request->validate([
+            'task'=> 'required|max:255']);
+        
         // タスク名の作成
         $task = new Task;
         $task->content = $request->content;
