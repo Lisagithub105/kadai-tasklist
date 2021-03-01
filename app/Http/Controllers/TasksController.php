@@ -51,10 +51,12 @@ class TasksController extends Controller
     {
         // バリデーション
         $request->validate([
-            'task'=> 'required|max:255']);
+            'status' => 'required|max:10', // カラム追加
+            'content' => 'required|max:255']);
         
         // タスク名の作成
         $task = new Task;
+        $task->status = $request->status; // カラム追加
         $task->content = $request->content;
         $task->save();
         
@@ -105,6 +107,12 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'status' => 'required|max:10',
+            'content' => 'required|max:255',
+            ]);
+        
         // idの値でタスク名を検索して取得
         $task = Task::findOrFail($id);
         // タスク名を更新

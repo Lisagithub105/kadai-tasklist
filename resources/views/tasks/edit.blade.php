@@ -6,6 +6,10 @@
         <div class="col-6">
             {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' =>'put']) !!}
             
+                 <div class="form-group">
+                    {!! Form::label('status', '状況：') !!}
+                    {!! Form::text('status', null, ['class' => 'form-control']) !!}
+                </div>
                 <div class="form-group">
                     {!! Form::label('content', 'タスク名：') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}
