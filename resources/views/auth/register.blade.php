@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="text-center">
-        <h1>Signup</h1>
+        <h1>Sign up</h1>
     </div>
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
             
             {!! Form::open(['route' => 'signup.post']) !!}
+        
             <div class="form-group">
                 {!! Form::label('name', 'Name') !!}
                 {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
@@ -17,8 +18,12 @@
                 {!! Form::email('email', old('email'), ['class' => 'form-control']) !!}
             </div>
             <div class="form-group">
-                {!! Form::label('password', 'Password') !!}
-                {!! Form::text('password_confirmation', ['class' => 'form-control']) !!}
+                    {!! Form::label('password', 'Password') !!}
+                    {!! Form::password('password', ['class' => 'form-control']) !!}
+            </div>
+            <div class="form-group">
+                {!! Form::label('password_confirmation', 'Confirmation') !!}
+                {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
             </div>
             {!! Form::submit('Signup', ['class' => 'btn btn-primary btn-block']) !!}
         {!! Form::close() !!}
