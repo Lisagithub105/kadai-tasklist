@@ -116,7 +116,7 @@ class TasksController extends Controller
         {
             
             // idの値でメッセージを検索して取得
-            $message = Message::findOrFail($id);
+            $message = Task::findOrFail($id);
             // タスク名編集ビューでそれを表示
             return view('tasks.edit', [
                 'task' => $task,
